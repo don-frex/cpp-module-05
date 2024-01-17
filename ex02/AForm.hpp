@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:24:08 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/12 18:24:26 by asaber           ###   ########.fr       */
+/*   Updated: 2024/01/17 11:52:23 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat;
 # include <iostream>
 # include <stdexcept>
 
-class Form
+class AForm
 {
 	private:
 		const std::string	name;
@@ -28,10 +28,10 @@ class Form
 		const int	sign_required;
 		const int	exec_required;
 	public:
-		Form();
-		Form(std::string _name, bool _is_signed, const int _sign_required, const int _exec_required);
-		Form(Form &other);
-		~Form();
+		AForm();
+		AForm(std::string _name, bool _is_signed, const int _sign_required, const int _exec_required);
+		AForm(AForm &other);
+		~AForm();
 		std::string getname(void);
 		bool getsigning(void);
 		int getsign_required(void);
