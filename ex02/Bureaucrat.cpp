@@ -33,7 +33,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "bureaucrat is distroyed!" << std::endl;
+	//std::cout << "bureaucrat is distroyed!" << std::endl;
 }
 
 std::string Bureaucrat::getName(void)
@@ -41,7 +41,7 @@ std::string Bureaucrat::getName(void)
 	return (name);
 }
 
-int Bureaucrat::getGrade(void)
+int Bureaucrat::getGrade(void) const
 {
 	return (grade);
 }

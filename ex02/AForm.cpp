@@ -70,6 +70,6 @@ const char* AForm::GradeTooLowException::what() const throw()
 
 AForm::~AForm()
 {
-	std::cout << "AForm Destroyed" << std::endl;
+	//std::cout << "AForm Destroyed" << std::endl;
 }
 
