@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 23:14:35 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/19 23:33:25 by asaber           ###   ########.fr       */
+/*   Updated: 2024/01/20 10:58:50 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,6 @@ class PresidentialPardonForm : public AForm
 		void execute(Bureaucrat const &executor);
 };
 
-std::ostream& operator << (std::ostream& out, PresidentialPardonForm& form)
-{
-	out << "PresidentialPardonForm " << form.getname() << " is " << (form.getsigning() ? "" : "not ") << "signed" << std::endl;	
-	return (out);
-}
+std::ostream& operator << (std::ostream& out, PresidentialPardonForm& form);
 
 #endif

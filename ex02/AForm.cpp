@@ -25,7 +25,7 @@ AForm::AForm(std::string _name, bool _is_signed, const int _sign_required, const
 		throw GradeTooLowException();
 }
 
-void AForm::beSigned(Bureaucrat &Bureaucrat)
+void AForm::beSigned(Bureaucrat &Bureaucrat) const
 {
 	if (Bureaucrat.getGrade() > this->getsign_required())
 		throw GradeTooLowException();

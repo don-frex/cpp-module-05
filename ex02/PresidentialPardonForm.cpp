@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 23:30:54 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/19 23:42:40 by asaber           ###   ########.fr       */
+/*   Updated: 2024/01/20 10:59:01 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string _target) : AForm(_tar
 
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &other) : : AForm(other.target, other.getsigning(), other.getsign_required(), other.getexec_required()), target(other.target)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &other) : AForm(other.target, other.getsigning(), other.getsign_required(), other.getexec_required()), target(other.target)
 {
 
 }
@@ -43,4 +43,10 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor)
 	if (executor.getGrade() > getexec_required())
 		throw AForm::GradeTooLowException();
 	std::cout << getname() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
+std::ostream& operator << (std::ostream& out, PresidentialPardonForm& form)
+{
+	out << "PresidentialPardonForm " << form.getname() << " is " << (form.getsigning() ? "" : "not ") << "signed" << std::endl;	
+	return (out);
 }

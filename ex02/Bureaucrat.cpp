@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("default"), grade(1) {
 
@@ -44,6 +45,19 @@ std::string Bureaucrat::getName(void)
 int Bureaucrat::getGrade(void) const
 {
 	return (grade);
+}
+
+void Bureaucrat::executeForm(const AForm &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << "Form signed successfully!" << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Failed to sign the form: " << e.what() << std::endl;
+    }
 }
 
 void	Bureaucrat::increment(void)

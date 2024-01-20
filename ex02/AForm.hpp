@@ -6,19 +6,18 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:24:08 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/19 17:58:04 by asaber           ###   ########.fr       */
+/*   Updated: 2024/01/20 14:48:13 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include "Bureaucrat.hpp"
-
-class Bureaucrat;
-
 # include <iostream>
 # include <stdexcept>
+
+class Bureaucrat;
 
 class AForm
 {
@@ -36,7 +35,7 @@ class AForm
 		bool getsigning(void);
 		int getsign_required(void);
 		int	getexec_required(void);
-		void beSigned(Bureaucrat &Bureaucrat);
+		void beSigned(Bureaucrat &Bureaucrat) const;
 		virtual void execute(Bureaucrat const &executor) = 0;
 		class GradeTooHighException : public std::exception
 		{

@@ -1,5 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
@@ -10,11 +11,16 @@ int	main()
 		RobotomyRequestForm test2("2ttttttttest");
 		RobotomyRequestForm test3("3ttttttttest");
 		RobotomyRequestForm test4("4ttttttttest");
+		PresidentialPardonForm ptest("anchoufou");
+		ShrubberyCreationForm stest("chejra");
 		Bureaucrat sil9ayd("si l9ayd", 1);
 		test.execute(sil9ayd);
 		test2.execute(sil9ayd);
 		test3.execute(sil9ayd);
 		test4.execute(sil9ayd);
+		ptest.execute(sil9ayd);
+		stest.execute(sil9ayd);
+
 	}
 	catch (const std::exception &e)
 	{
