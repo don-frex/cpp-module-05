@@ -33,6 +33,7 @@ class Bureaucrat
 		void	increment(void);
 		void	decrement(void);
 		void	executeForm(AForm const & form);
+		// has an error in this memeber function!
 		class GradeTooHighException : public std::exception
 		{
 			const char* what() const throw();
