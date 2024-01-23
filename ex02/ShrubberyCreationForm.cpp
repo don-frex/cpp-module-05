@@ -31,7 +31,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor)
 
 	if (executor.getGrade() > this->getexec_required())
 		throw AForm::GradeTooLowException();
-	outfile.open(this->target + "_shrubbery");
+	// "c_str()" to convert std::string to const char* to avoid errors when compailing using std=c++98
+	outfile.open((this->target + "_shrubbery").c_str());
 	outfile <<"	          .     .  .      +     .      .          ."<< std::endl;
 	outfile <<"     .       .      .     #       .           ."<< std::endl;
 	outfile <<"        .      .         ###            .      .      ."<< std::endl;
