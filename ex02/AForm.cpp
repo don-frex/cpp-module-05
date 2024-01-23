@@ -29,7 +29,7 @@ void AForm::beSigned(Bureaucrat &Bureaucrat) const
 {
 	if (Bureaucrat.getGrade() > this->getsign_required())
 		throw GradeTooLowException();
-	this->is_signed = true;
+	//this->is_signed = 1;
 	std::cout << "'" << Bureaucrat.getName() << "'" << " signed " << this->getname() << std::endl;
 		
 }
@@ -38,22 +38,22 @@ AForm::AForm(AForm &other) : name(other.name), is_signed(other.is_signed), sign_
 	
 }
 
-std::string AForm::getname(void)
+std::string AForm::getname(void) const
 {
 	return this->name;
 }
 
-bool AForm::getsigning(void)
+bool AForm::getsigning(void) const
 {
 	return this->is_signed;
 }
 
-int	AForm::getsign_required(void)
+int	AForm::getsign_required(void) const
 {
 	return this->sign_required;
 }
 
-int AForm::getexec_required(void)
+int AForm::getexec_required(void) const
 {
 	return this->exec_required;
 }

@@ -31,10 +31,10 @@ class AForm
 		AForm(std::string _name, bool _is_signed, const int _sign_required, const int _exec_required);
 		AForm(AForm &other);
 		~AForm();
-		std::string getname(void);
-		bool getsigning(void);
-		int getsign_required(void);
-		int	getexec_required(void);
+		std::string getname(void) const;
+		bool getsigning(void) const;
+		int getsign_required(void) const;
+		int	getexec_required(void) const;
 		void beSigned(Bureaucrat &Bureaucrat) const;
 		virtual void execute(Bureaucrat const &executor) = 0;
 		class GradeTooHighException : public std::exception
