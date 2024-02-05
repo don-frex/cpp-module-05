@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:30:50 by asaber            #+#    #+#             */
-/*   Updated: 2024/02/03 20:42:55 by asaber           ###   ########.fr       */
+/*   Updated: 2024/02/05 13:11:45 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ AForm& Intern::makeForm(const std::string Fname, const std::string target)
 		{
 			output = Forms_list(target);
 			std::cout << "Intern creates " << Fname << std::endl;
-			return (*output);
+			return (output[i]);
 		}
 	}
 	std::cerr << "Intern can't create " << Fname << std::endl;

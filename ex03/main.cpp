@@ -6,15 +6,15 @@
 int	main()
 {
 
+
 	try
 	{
 		Intern intern;
 		intern.makeForm("robotomy request", "Bender");
 		intern.makeForm("presidential pardon", "Bender");
 		intern.makeForm("shrubbery creation", "Bender");
-		// set case error
+		// set error case
 		intern.makeForm("chahat sekna", "Bender");
-
 	}
 	catch (const std::exception &e)
 	{
