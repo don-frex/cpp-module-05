@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:06:29 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/20 14:40:34 by asaber           ###   ########.fr       */
+/*   Updated: 2024/02/03 20:25:10 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <stdexcept>
+# include "AForm.hpp"
 
 class AForm;
 

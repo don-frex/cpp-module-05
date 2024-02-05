@@ -13,7 +13,7 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 		
-		Bureaucrat a("a", 150);
+		Bureaucrat a("a", -1500);
 		Bureaucrat b("b", 1);
 
 		std::cout << "a, " << "bureaucrat grade "<< a.getGrade() <<std::endl;

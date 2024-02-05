@@ -25,6 +25,12 @@ AForm::AForm(std::string _name, bool _is_signed, const int _sign_required, const
 		throw GradeTooLowException();
 }
 
+AForm& AForm::operator = (AForm& copy)
+{
+	this->is_signed = copy.is_signed;
+	return (*this);
+}
+
 void AForm::beSigned(Bureaucrat &Bureaucrat) const
 {
 	if (Bureaucrat.getGrade() > this->getsign_required())
