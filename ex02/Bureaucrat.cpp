@@ -1,13 +1,11 @@
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("default"), grade(1) {
 
 }
 
-Bureaucrat::Bureaucrat(std::string _name, int grade)
+Bureaucrat::Bureaucrat(std::string _name, int grade) : name(_name)
 {
-	this->name = _name;
 	if (grade > 150)
 		throw GradeTooLowException();
 	else if (grade < 1)
@@ -16,9 +14,13 @@ Bureaucrat::Bureaucrat(std::string _name, int grade)
 		this->grade = grade;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat &other) : name(other.name)
+{
+	this->grade = other.grade;
+}
+
 Bureaucrat& Bureaucrat::operator = (const Bureaucrat& other)
 {
-	this->name = other.name;
 	this->grade = other.grade;
 	return (*this);
 }
@@ -34,10 +36,10 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::~Bureaucrat()
 {
-	//std::cout << "bureaucrat is distroyed!" << std::endl;
+	std::cout << "bureaucrat is distroyed!" << std::endl;
 }
 
-std::string Bureaucrat::getName(void)
+std::string Bureaucrat::getName(void) const
 {
 	return (name);
 }
@@ -45,19 +47,6 @@ std::string Bureaucrat::getName(void)
 int Bureaucrat::getGrade(void) const
 {
 	return (grade);
-}
-
-void Bureaucrat::executeForm(const AForm &form)
-{
-    try
-    {
-        form.beSigned(*this);
-        std::cout << "Form signed successfully!" << std::endl;
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Failed to sign the form: " << e.what() << std::endl;
-    }
 }
 
 void	Bureaucrat::increment(void)
@@ -75,4 +64,10 @@ void	Bureaucrat::decrement(void)
 		throw GradeTooLowException();
 	else if (grade < 1)
 		throw GradeTooHighException();
+}
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bur)
+{
+	out << "Bureaucrat " << bur.getName() << " grade " << bur.getGrade();
+	return out;
 }

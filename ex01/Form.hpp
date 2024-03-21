@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:24:08 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/12 18:24:26 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/20 15:13:56 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ class Form
 		Form(std::string _name, bool _is_signed, const int _sign_required, const int _exec_required);
 		Form(Form &other);
 		~Form();
-		std::string getname(void);
-		bool getsigning(void);
-		int getsign_required(void);
-		int	getexec_required(void);
+		std::string getname(void) const;
+		bool getsigning(void) const;
+		int getsign_required(void) const;
+		int	getexec_required(void) const;
 		void beSigned(Bureaucrat &Bureaucrat);
 		class GradeTooHighException : public std::exception
 		{
@@ -48,5 +48,7 @@ class Form
 				virtual const char* what() const throw();
 		};	
 };
+
+std::ostream& operator << (std::ostream& out, const Form o_form);
 
 #endif

@@ -7,6 +7,7 @@ int	main()
 		Bureaucrat bure("l9ayd", 14);
 		Form form("3a9d lizdiyad", 0, 100, 100);
 		form.beSigned(bure);
+		std::cout << form << std::endl;
 	}
 	catch (const std::exception &e)
 	{

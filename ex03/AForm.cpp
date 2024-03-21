@@ -79,3 +79,8 @@ AForm::~AForm()
 	//std::cout << "AForm Destroyed" << std::endl;
 }
 
+std::ostream& operator << (std::ostream& out, const AForm& o_form)
+{
+	out << "form : " << o_form.getname() << ", signinig state: " << o_form.getsigning() << ", grade to exucut " << o_form.getexec_required() << std::endl;
+	return out;
+}

@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:27:24 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/12 18:26:50 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/20 15:17:51 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,22 @@ Form::Form(Form &other) : name(other.name), is_signed(other.is_signed), sign_req
 	
 }
 
-std::string Form::getname(void)
+std::string Form::getname(void) const
 {
 	return this->name;
 }
 
-bool Form::getsigning(void)
+bool Form::getsigning(void) const
 {
 	return this->is_signed;
 }
 
-int	Form::getsign_required(void)
+int	Form::getsign_required(void) const
 {
 	return this->sign_required;
 }
 
-int Form::getexec_required(void)
+int Form::getexec_required(void) const
 {
 	return this->exec_required;
 }
@@ -70,6 +70,10 @@ const char* Form::GradeTooLowException::what() const throw()
 
 Form::~Form()
 {
-	std::cout << "Form Destroyed" << std::endl;
 }
 
+std::ostream& operator << (std::ostream& out, const Form o_form)
+{
+	out << "form : " << o_form.getname() << ", signinig state: " << o_form.getsigning() << ", grade to exucut " << o_form.getexec_required() << std::endl;
+	return out;
+}
