@@ -6,7 +6,11 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:30:50 by asaber            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/22 22:16:09 by asaber           ###   ########.fr       */
+=======
+/*   Updated: 2024/03/21 22:47:41 by asaber           ###   ########.fr       */
+>>>>>>> aca51779f85fb9a3e41f8a618d59f5ff398e5b4c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +44,7 @@ AForm* Forms_list(std::string target)
 	return (*list);
 }
 
+<<<<<<< HEAD
 void	delform(AForm **del_list)
 {
 	for(int i = 0; i < 3; i++)
@@ -48,6 +53,8 @@ void	delform(AForm **del_list)
 	}
 }
 
+=======
+>>>>>>> aca51779f85fb9a3e41f8a618d59f5ff398e5b4c
 AForm& Intern::makeForm(const std::string Fname, const std::string target)
 {
 
