@@ -25,6 +25,12 @@ AForm::AForm(std::string _name, bool _is_signed, const int _sign_required, const
 		throw GradeTooLowException();
 }
 
+AForm& AForm::operator = (AForm& copy)
+{
+	this->is_signed = copy.is_signed;
+	return (*this);
+}
+
 void AForm::beSigned(Bureaucrat &Bureaucrat) const
 {
 	if (Bureaucrat.getGrade() > this->getsign_required())
@@ -73,3 +79,8 @@ AForm::~AForm()
 	//std::cout << "AForm Destroyed" << std::endl;
 }
 
+std::ostream& operator << (std::ostream& out, const AForm& o_form)
+{
+	out << "form : " << o_form.getname() << ", signinig state: " << o_form.getsigning() << ", grade to exucut " << o_form.getexec_required() << std::endl;
+	return out;
+}

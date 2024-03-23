@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:24:08 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/20 14:48:13 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/20 15:18:02 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ class AForm
 				virtual const char* what() const throw() { return ("Form not signed");};
 		};
 };
-
+std::ostream& operator << (std::ostream& out, const AForm& o_form);
 #endif

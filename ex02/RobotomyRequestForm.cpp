@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:06:05 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/19 23:12:42 by asaber           ###   ########.fr       */
+/*   Updated: 2024/02/05 13:21:12 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,11 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor)
 
 	if (executor.getGrade() > this->getexec_required())
 		throw AForm::GradeTooLowException();
-	// check = rand() % 2;
-	std::cout << check << std::endl;
+	// check = rand() % 2; not working!!!!
 	if (check++ % 2)
-		std::cout << getname() << "has been robotomized successfull!" << std::endl;
+		std::cout << getname() << " has been robotomized successfull!" << std::endl;
 	else
-		std::cout << getname() << "robotomy failed!" << std::endl;
+		std::cout << getname() << " robotomy failed!" << std::endl;
 }
 
 // for << operator

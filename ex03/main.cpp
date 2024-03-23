@@ -1,29 +1,20 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
 
+
 	try
 	{
-		RobotomyRequestForm test("ttttttttest");
-		RobotomyRequestForm test2("2ttttttttest");
-		RobotomyRequestForm test3("3ttttttttest");
-		RobotomyRequestForm test4("4ttttttttest");
-		PresidentialPardonForm ptest("anchoufou");
-		PresidentialPardonForm ptest2("manchofo");
-		ShrubberyCreationForm stest("chejra");
-		Bureaucrat sil9ayd("si l9ayd", 1);
-		Bureaucrat silm9adem("si lm9adem", 15);
-		test.execute(sil9ayd);
-		test2.execute(sil9ayd);
-		test3.execute(sil9ayd);
-		test4.execute(sil9ayd);
-		ptest.execute(sil9ayd);
-		stest.execute(sil9ayd);
-		ptest2.execute(silm9adem);
-
+		Intern intern;
+		intern.makeForm("robotomy request", "Bender");
+		intern.makeForm("presidential pardon", "Bender");
+		intern.makeForm("shrubbery creation", "Bender");
+		// set error case
+		intern.makeForm("chahat sekna", "Bender");
 	}
 	catch (const std::exception &e)
 	{

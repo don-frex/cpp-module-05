@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 17:59:49 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/19 21:16:25 by asaber           ###   ########.fr       */
+/*   Updated: 2024/02/03 15:11:55 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(std::string _target);
 		RobotomyRequestForm(RobotomyRequestForm &other);
 		~RobotomyRequestForm();
+		RobotomyRequestForm& operator = (RobotomyRequestForm& copy);
 		void execute(Bureaucrat const &executor);
 };
 
