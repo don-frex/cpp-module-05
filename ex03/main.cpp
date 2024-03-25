@@ -13,14 +13,13 @@ int	main()
 		intern.makeForm("robotomy request", "Bender");
 		intern.makeForm("presidential pardon", "Bender");
 		intern.makeForm("shrubbery creation", "Bender");
-		// set error case
+		// error case
 		intern.makeForm("chahat sekna", "Bender");
 	}
 	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	//std::cout << test.getsign_required() << "\n" << test.getexec_required() << std::endl;
 	std::cout << "-------------------------------------" << std::endl;
 	
 	return (0);
