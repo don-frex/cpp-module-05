@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 23:14:35 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/20 10:58:50 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:23:09 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(PresidentialPardonForm &other);
 		PresidentialPardonForm& operator = (const PresidentialPardonForm& other);
 		~PresidentialPardonForm();
-		void execute(Bureaucrat const &executor);
+		void execute(Bureaucrat const &executor) const;
 };
 
 std::ostream& operator << (std::ostream& out, PresidentialPardonForm& form);

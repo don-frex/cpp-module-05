@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:06:05 by asaber            #+#    #+#             */
-/*   Updated: 2024/02/05 13:21:12 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:24:16 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-void	RobotomyRequestForm::execute(Bureaucrat const &executor)
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	static int check;
 

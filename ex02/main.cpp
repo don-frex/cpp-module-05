@@ -15,13 +15,14 @@ int	main()
 		PresidentialPardonForm ptest2("manchofo");
 		ShrubberyCreationForm stest("chejra");
 		Bureaucrat sil9ayd("si l9ayd", 1);
-		Bureaucrat silm9adem("si lm9adem", 15);
+		Bureaucrat silm9adem("lm9adem", 15);
 		test.execute(sil9ayd);
 		test2.execute(sil9ayd);
 		test3.execute(sil9ayd);
 		test4.execute(sil9ayd);
 		ptest.execute(sil9ayd);
 		stest.execute(sil9ayd);
+		sil9ayd.executeForm(ptest2);
 		ptest2.execute(silm9adem);
 
 	}

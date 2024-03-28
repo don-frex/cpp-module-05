@@ -73,7 +73,7 @@ void	Bureaucrat::signForm(AForm& form)
 		std::cout << this->getName() << " couldn’t sign " << form.getname() << std::endl;
 }
 
-void Bureaucrat::executeForm(AForm& form)
+void Bureaucrat::executeForm(AForm const & form)
 {
 	try
 	{

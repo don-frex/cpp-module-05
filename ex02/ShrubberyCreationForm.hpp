@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 11:48:28 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/19 21:05:30 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:23:38 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(ShrubberyCreationForm &other);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm& operator = (const ShrubberyCreationForm& other);
-		void execute(Bureaucrat const &executor);
+		void execute(Bureaucrat const &executor) const;
 };
 
 // for << operator
