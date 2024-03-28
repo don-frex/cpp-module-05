@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:27:24 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/20 15:17:51 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 22:44:32 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void Form::beSigned(Bureaucrat &Bureaucrat)
 	if (Bureaucrat.getGrade() > this->getsign_required())
 		throw GradeTooLowException();
 	this->is_signed = true;
-	std::cout << "'" << Bureaucrat.getName() << "'" << " signed " << this->getname() << std::endl;
-		
 }
 Form::Form(Form &other) : name(other.name), is_signed(other.is_signed), sign_required(other.sign_required), exec_required(other.exec_required)
 {

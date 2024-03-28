@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:27:24 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/12 18:26:50 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 18:16:05 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void AForm::beSigned(Bureaucrat &Bureaucrat) const
 {
 	if (Bureaucrat.getGrade() > this->getsign_required())
 		throw GradeTooLowException();
-	//this->is_signed = 1;
-	std::cout << "'" << Bureaucrat.getName() << "'" << " signed " << this->getname() << std::endl;
+	const_cast<bool&>(this->is_signed) = true;
+	//std::cout << "'" << Bureaucrat.getName() << "'" << " signed " << this->getname() << std::endl;
 		
 }
 AForm::AForm(AForm &other) : name(other.name), is_signed(other.is_signed), sign_required(other.sign_required), exec_required(other.exec_required)
