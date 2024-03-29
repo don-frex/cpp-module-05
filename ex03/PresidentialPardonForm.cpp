@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 23:30:54 by asaber            #+#    #+#             */
-/*   Updated: 2024/01/20 10:59:01 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:54:31 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor)
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > getexec_required())
 		throw AForm::GradeTooLowException();

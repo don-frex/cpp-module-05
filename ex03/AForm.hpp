@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:24:08 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/21 22:13:22 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:48:51 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AForm
 		int getsign_required(void) const;
 		int	getexec_required(void) const;
 		void beSigned(Bureaucrat &Bureaucrat) const;
-		virtual void execute(Bureaucrat const &executor) = 0;
+		virtual void execute(Bureaucrat const &executor) const = 0;
 		class GradeTooHighException : public std::exception
 		{
 			public:

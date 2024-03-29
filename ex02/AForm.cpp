@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:27:24 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/28 18:16:05 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:49:58 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ void AForm::beSigned(Bureaucrat &Bureaucrat) const
 	//std::cout << "'" << Bureaucrat.getName() << "'" << " signed " << this->getname() << std::endl;
 		
 }
+
+AForm& AForm::operator = (AForm& copy)
+{
+	this->is_signed = copy.is_signed;
+	return (*this);
+}
+
 AForm::AForm(AForm &other) : name(other.name), is_signed(other.is_signed), sign_required(other.sign_required), exec_required(other.exec_required)
 {
 	

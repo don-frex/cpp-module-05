@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 18:06:29 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/25 17:44:32 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:52:10 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
 		void	increment(void);
 		void	decrement(void);
 		void	signForm(AForm& form);
+		void	executeForm(AForm const & form);
 		class GradeTooHighException : public std::exception
 		{
 			const char* what() const throw();

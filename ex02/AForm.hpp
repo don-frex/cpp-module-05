@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:24:08 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/28 23:22:52 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/28 23:50:39 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class AForm
 		AForm(std::string _name, bool _is_signed, const int _sign_required, const int _exec_required);
 		AForm(AForm &other);
 		~AForm();
+		AForm& operator = (AForm& copy);
 		std::string getname(void) const;
 		bool getsigning(void) const;
 		int getsign_required(void) const;
@@ -53,5 +54,7 @@ class AForm
 				virtual const char* what() const throw() { return ("Form not signed");};
 		};
 };
+
 std::ostream& operator << (std::ostream& out, const AForm& o_form);
+
 #endif
