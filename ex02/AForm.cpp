@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:27:24 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/28 23:49:58 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/29 15:11:53 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void AForm::beSigned(Bureaucrat &Bureaucrat) const
 	if (Bureaucrat.getGrade() > this->getsign_required())
 		throw GradeTooLowException();
 	const_cast<bool&>(this->is_signed) = true;
-	//std::cout << "'" << Bureaucrat.getName() << "'" << " signed " << this->getname() << std::endl;
 		
 }
 
