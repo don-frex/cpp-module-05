@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 23:30:50 by asaber            #+#    #+#             */
-/*   Updated: 2024/03/25 17:46:39 by asaber           ###   ########.fr       */
+/*   Updated: 2024/03/29 16:05:48 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,30 @@ Intern& Intern::operator = (const Intern &other)
 	return (*this);
 }
 
-AForm* Forms_list(std::string target)
-{
-	AForm** list = new AForm*[3];
-	
-	list[0] = new RobotomyRequestForm(target);
-	list[1] = new PresidentialPardonForm(target);
-	list[2] = new ShrubberyCreationForm(target);
-	return (*list);
+AForm* Forms_list(const std::string& target, const std::string& formType) {
+    if (formType == "robotomy request") {
+        return new RobotomyRequestForm(target);
+    } else if (formType == "presidential pardon") {
+        return new PresidentialPardonForm(target);
+    } else if (formType == "shrubbery creation") {
+        return new ShrubberyCreationForm(target);
+    } else {
+        return nullptr;
+    }
 }
 
 AForm& Intern::makeForm(const std::string Fname, const std::string target)
 {
 
-	AForm *output = NULL;
-	std::string str_list[] = {"robotomy request", "presidential pardon", "shrubbery creation"};
+	AForm *output = Forms_list(target, Fname);
 
-	for (int i = 0; i < 3; i++)
+	if (output != nullptr)
 	{
-		if (str_list[i] == Fname)
-		{
-			output = Forms_list(target);
-			std::cout << "Intern creates " << Fname << std::endl;
-			return (output[i]);
-		}
+		std::cout << "Intern creates " << Fname << std::endl;
+		return (*output);
 	}
-	std::cerr << "Intern can't create " << Fname << std::endl;
-	return (*output);
+	else
+		throw std::runtime_error("Intern can't create " + Fname);
 }
 
 Intern::~Intern()
